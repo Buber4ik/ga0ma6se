@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рейтинг игр по упоминаниям</title>
+    <title>Полный рейтинг игр по упоминаниям</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -11,19 +11,19 @@
     <div class="max-w-7xl mx-auto">
         <!-- Заголовок -->
         <header class="mb-10 text-left border-l-4 border-purple-500 pl-6">
-            <h1 class="text-4xl font-black text-white tracking-tight uppercase">📊 Рейтинг Игр</h1>
-            <p class="text-slate-400 text-lg mt-2">По количеству упоминаний в комментариях (2,936 комментариев)</p>
+            <h1 class="text-4xl font-black text-white tracking-tight uppercase">📊 Полный рейтинг игр</h1>
+            <p class="text-slate-400 text-lg mt-2">Все 147 игр по упоминаниям в 2,936 комментариях</p>
         </header>
 
         <!-- Основная статистика -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
             <div class="bg-gradient-to-br from-purple-900/30 to-purple-700/20 border border-purple-500/30 rounded-xl p-6">
                 <div class="text-slate-400 text-sm font-semibold uppercase">Всего упоминаний</div>
-                <div class="text-3xl font-bold text-purple-400 mt-2">1,622</div>
+                <div class="text-3xl font-bold text-purple-400 mt-2">2,142</div>
             </div>
             <div class="bg-gradient-to-br from-indigo-900/30 to-indigo-700/20 border border-indigo-500/30 rounded-xl p-6">
                 <div class="text-slate-400 text-sm font-semibold uppercase">Уникальных игр</div>
-                <div class="text-3xl font-bold text-indigo-400 mt-2">92</div>
+                <div class="text-3xl font-bold text-indigo-400 mt-2">147</div>
             </div>
             <div class="bg-gradient-to-br from-pink-900/30 to-pink-700/20 border border-pink-500/30 rounded-xl p-6">
                 <div class="text-slate-400 text-sm font-semibold uppercase">Топ игра</div>
@@ -31,7 +31,7 @@
             </div>
             <div class="bg-gradient-to-br from-cyan-900/30 to-cyan-700/20 border border-cyan-500/30 rounded-xl p-6">
                 <div class="text-slate-400 text-sm font-semibold uppercase">Топ упоминаний</div>
-                <div class="text-3xl font-bold text-cyan-400 mt-2">303</div>
+                <div class="text-3xl font-bold text-cyan-400 mt-2">471</div>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
             <div class="lg:col-span-2">
                 <div class="bg-[#1e293b] rounded-2xl shadow-2xl border border-slate-800 overflow-hidden">
                     <div class="p-6 border-b border-slate-700 bg-[#1e293b]">
-                        <h3 class="text-xl font-bold text-purple-400">📈 Полный Рейтинг Игр</h3>
+                        <h3 class="text-xl font-bold text-purple-400">📈 Полный Рейтинг (147 игр)</h3>
                     </div>
                     <div class="overflow-y-auto max-h-[700px] custom-scrollbar">
                         <table class="w-full text-left border-collapse">
@@ -76,21 +76,21 @@
                             <div class="text-2xl font-bold text-yellow-400">🥇</div>
                             <div>
                                 <div class="font-semibold text-white">Minecraft</div>
-                                <div class="text-sm text-slate-400">303 упоминаний • 18.5%</div>
+                                <div class="text-sm text-slate-400">471 упоминание • 22.0%</div>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 pb-3 border-b border-slate-700">
                             <div class="text-2xl font-bold text-gray-300">🥈</div>
                             <div>
                                 <div class="font-semibold text-white">Terraria</div>
-                                <div class="text-sm text-slate-400">182 упоминаний • 11.1%</div>
+                                <div class="text-sm text-slate-400">176 упоминаний • 8.2%</div>
                             </div>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="text-2xl font-bold text-orange-600">🥉</div>
                             <div>
-                                <div class="font-semibold text-white">Hollow Knight</div>
-                                <div class="text-sm text-slate-400">155 упоминаний • 9.4%</div>
+                                <div class="font-semibold text-white">Factorio</div>
+                                <div class="text-sm text-slate-400">82 упоминания • 3.8%</div>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,14 @@
             </div>
         </div>
 
-        
+        <!-- Информация о снимке -->
+        <div class="mt-8 bg-slate-800/30 border border-slate-700 rounded-xl p-6">
+            <p class="text-slate-400 text-sm">
+                <span class="font-semibold text-slate-300">📝 Источник данных:</span> Анализ 2,936 комментариев с канала ZakvielChannel.
+                Полный подсчет всех 147 уникальных игр с учетом всех вариаций названий (русские, английские, сокращения, сленг).
+                Дата анализа: <span class="font-mono text-purple-400">2026-02-18</span>
+            </p>
+        </div>
     </div>
 
     <style>
@@ -109,100 +116,155 @@
     </style>
 
     <script>
-        // Полные данные рейтинга игр (92 уникальные)
+        // Полные данные всех 147 игр
         const gamesData = [
-            { name: "Minecraft", count: 326 },
-            { name: "Terraria", count: 174 },
-            { name: "Hollow Knight", count: 75 },
-            { name: "Factorio", count: 74 },
-            { name: "The Binding of Isaac", count: 63 },
-            { name: "RimWorld", count: 40 },
-            { name: "Dota 2", count: 38 },
-            { name: "Deltarune", count: 37 },
-            { name: "The Witcher 3", count: 33 },
-            { name: "Elden Ring", count: 33 },
-            { name: "Valheim", count: 30 },
-            { name: "Skyrim", count: 29 },
+            { name: "Minecraft", count: 471 },
+            { name: "Terraria", count: 176 },
+            { name: "Factorio", count: 82 },
+            { name: "Hollow Knight", count: 77 },
+            { name: "The Witcher 3", count: 71 },
+            { name: "The Binding of Isaac", count: 69 },
+            { name: "Dota 2", count: 59 },
+            { name: "Deltarune", count: 50 },
+            { name: "Cyberpunk 2077", count: 34 },
+            { name: "Stardew Valley", count: 32 },
+            { name: "Elden Ring", count: 29 },
+            { name: "RimWorld", count: 29 },
             { name: "Satisfactory", count: 29 },
-            { name: "Cyberpunk 2077", count: 28 },
             { name: "Hollow Knight: Silksong", count: 27 },
             { name: "Noita", count: 26 },
-            { name: "Stardew Valley", count: 23 },
-            { name: "Undertale", count: 23 },
-            { name: "Genshin Impact", count: 22 },
+            { name: "Terraria - Calamity Mod", count: 25 },
+            { name: "Hearts of Iron 4", count: 25 },
+            { name: "Counter-Strike", count: 24 },
+            { name: "Genshin Impact", count: 23 },
             { name: "Outer Wilds", count: 21 },
-            { name: "Hearts of Iron IV", count: 20 },
+            { name: "Undertale", count: 20 },
+            { name: "Valheim", count: 19 },
+            { name: "Portal", count: 19 },
             { name: "Portal 2", count: 18 },
+            { name: "osu!", count: 18 },
             { name: "Dark Souls", count: 17 },
-            { name: "Mindustry", count: 16 },
             { name: "Dishonored", count: 15 },
-            { name: "Subnautica", count: 15 },
+            { name: "Sea of Thieves", count: 15 },
+            { name: "Ultrakill", count: 15 },
             { name: "Mewgenics", count: 14 },
-            { name: "S.T.A.L.K.E.R", count: 14 },
-            { name: "Metro 2033", count: 14 },
+            { name: "Mindustry", count: 14 },
             { name: "Celeste", count: 14 },
+            { name: "Baldur's Gate 3", count: 14 },
+            { name: "Katana ZERO", count: 14 },
+            { name: "Metro", count: 13 },
+            { name: "Deadlock", count: 13 },
+            { name: "Kerbal Space Program", count: 13 },
             { name: "Rust", count: 12 },
+            { name: "Subnautica", count: 12 },
+            { name: "Deep Rock Galactic", count: 12 },
+            { name: "Skyrim", count: 12 },
+            { name: "Risk of Rain", count: 12 },
             { name: "Dead Cells", count: 11 },
-            { name: "Kerbal Space Program", count: 11 },
+            { name: "War Thunder", count: 11 },
+            { name: "League of Legends", count: 11 },
+            { name: "StarCraft", count: 11 },
+            { name: "Project Zomboid", count: 11 },
             { name: "Oxygen Not Included", count: 10 },
-            { name: "Deep Rock Galactic", count: 10 },
             { name: "Risk of Rain 2", count: 10 },
-            { name: "Barotrauma", count: 10 },
-            { name: "Scrap Mechanic", count: 9 },
+            { name: "Persona", count: 10 },
+            { name: "Spore", count: 9 },
+            { name: "Rogue Legacy", count: 9 },
             { name: "Arknights", count: 9 },
             { name: "OneShot", count: 9 },
+            { name: "The Last of Us", count: 9 },
             { name: "Rain World", count: 8 },
-            { name: "Sekiro", count: 8 },
-            { name: "Zenless Zone Zero", count: 7 },
-            { name: "Lobotomy Corporation", count: 7 },
+            { name: "Disco Elysium", count: 8 },
+            { name: "GTA", count: 8 },
+            { name: "Doom", count: 8 },
+            { name: "God of War", count: 8 },
+            { name: "Sekiro - Shadows Die Twice", count: 8 },
+            { name: "Frostpunk", count: 8 },
             { name: "Counter-Strike 2", count: 7 },
+            { name: "Crusader Kings", count: 7 },
             { name: "Omori", count: 7 },
             { name: "Resident Evil", count: 7 },
-            { name: "Team Fortress 2", count: 7 },
-            { name: "Escape from Tarkov", count: 7 },
             { name: "Half-Life", count: 7 },
-            { name: "Library of Ruina", count: 6 },
-            { name: "Sea of Thieves", count: 6 },
-            { name: "Spore", count: 6 },
-            { name: "Nine Sols", count: 6 },
-            { name: "Atomic Heart", count: 6 },
+            { name: "Clash Royale", count: 6 },
+            { name: "Dark Souls 3", count: 6 },
+            { name: "Apex Legends", count: 6 },
+            { name: "Slime Rancher", count: 6 },
+            { name: "Kingdom Come - Deliverance", count: 6 },
             { name: "Borderlands", count: 6 },
+            { name: "The Legend of Zelda", count: 6 },
             { name: "Slay the Spire", count: 6 },
-            { name: "Baldur's Gate 3", count: 6 },
-            { name: "Space Engineers", count: 6 },
-            { name: "Abiotic Factor", count: 6 },
             { name: "Foxhole", count: 5 },
+            { name: "Zenless Zone Zero", count: 5 },
+            { name: "Terraria - Fargo Souls Mod", count: 5 },
             { name: "Astroneer", count: 5 },
-            { name: "Warframe", count: 5 },
-            { name: "Persona 5", count: 5 },
-            { name: "Dying Light 2", count: 4 },
-            { name: "Apex Legends", count: 4 },
-            { name: "Divinity Original Sin 2", count: 4 },
-            { name: "Ark: Survival Evolved", count: 4 },
-            { name: "Clair Obscur", count: 3 },
-            { name: "Crusader Kings 3", count: 3 },
-            { name: "Call of Duty", count: 3 },
-            { name: "Dead by Daylight", count: 3 },
+            { name: "Roblox", count: 5 },
+            { name: "Fallout", count: 5 },
+            { name: "Horizon", count: 5 },
+            { name: "World of Warcraft", count: 5 },
+            { name: "Touhou", count: 5 },
+            { name: "Red Dead Redemption", count: 5 },
+            { name: "Metro Exodus", count: 4 },
+            { name: "Death Stranding", count: 4 },
+            { name: "Limbus Company", count: 4 },
+            { name: "The Witness", count: 4 },
+            { name: "Enter the Gungeon", count: 4 },
+            { name: "Divinity Original Sin", count: 4 },
+            { name: "Europa Universalis", count: 4 },
+            { name: "S.T.A.L.K.E.R", count: 4 },
             { name: "Stray", count: 3 },
+            { name: "Diablo", count: 3 },
             { name: "Overwatch", count: 3 },
-            { name: "Final Fantasy", count: 3 },
-            { name: "Alien Max Simulator", count: 2 },
-            { name: "Rainbow Six Siege", count: 2 },
+            { name: "The Forest", count: 3 },
             { name: "Valorant", count: 2 },
-            { name: "The Witness", count: 2 },
+            { name: "Metro 2033", count: 2 },
+            { name: "Oblivion", count: 2 },
+            { name: "GTA V", count: 2 },
+            { name: "Inscryption", count: 2 },
+            { name: "Starbound", count: 2 },
+            { name: "Tetris", count: 2 },
             { name: "Cuphead", count: 2 },
+            { name: "Phasmophobia", count: 2 },
+            { name: "Dwarf Fortress", count: 2 },
+            { name: "Path of Exile", count: 2 },
             { name: "Fortnite", count: 2 },
+            { name: "Dragon Age", count: 2 },
+            { name: "Five Nights at Freddy's", count: 2 },
+            { name: "Civilization", count: 2 },
+            { name: "Mass Effect", count: 2 },
+            { name: "Hades", count: 2 },
             { name: "Kenshi", count: 2 },
-            { name: "Garry Mod", count: 1 },
-            { name: "Serious Sam", count: 1 },
-            { name: "Dragons Dogma 2", count: 1 },
+            { name: "Honkai Star Rail", count: 2 },
+            { name: "Hyper Light Drifter", count: 2 },
+            { name: "Nier Automata", count: 2 },
+            { name: "No Man's Sky", count: 2 },
+            { name: "Star Wars Jedi", count: 2 },
+            { name: "F.E.A.R", count: 2 },
+            { name: "Kena Bridge of Spirits", count: 2 },
+            { name: "Garry's Mod", count: 1 },
+            { name: "Pokemon", count: 1 },
+            { name: "Pokemon Leaf Green", count: 1 },
+            { name: "Pokemon Emerald", count: 1 },
+            { name: "Gensokyo", count: 1 },
+            { name: "The Isle", count: 1 },
+            { name: "Left 4 Dead", count: 1 },
+            { name: "Dragon's Dogma 2", count: 1 },
             { name: "Control", count: 1 },
+            { name: "Spelunky", count: 1 },
+            { name: "Titan Quest", count: 1 },
+            { name: "Team Fortress 2", count: 1 },
             { name: "Bloodborne", count: 1 },
-            { name: "Warcraft III", count: 1 },
+            { name: "Sonic the Hedgehog", count: 1 },
+            { name: "The Outer Worlds", count: 1 },
             { name: "Plants vs Zombies", count: 1 },
+            { name: "Minecraft Dungeons", count: 1 },
+            { name: "Kingdom Rush", count: 1 },
             { name: "Alien Isolation", count: 1 },
-            { name: "Honkai: Star Rail", count: 1 },
-            { name: "Monster Hunter", count: 1 }
+            { name: "Ghost of Tsushima", count: 1 },
+            { name: "Detroit Become Human", count: 1 },
+            { name: "Ratchet and Clank", count: 1 },
+            { name: "Black Myth Wukong", count: 1 },
+            { name: "Monster Hunter", count: 1 },
+            { name: "Starsector", count: 1 }
         ];
 
         const totalMentions = gamesData.reduce((sum, g) => sum + g.count, 0);
@@ -270,7 +332,7 @@
     </script>
 
     <footer class="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>Созданно для анализа популярности игр на основе комментариев</p>
+        <p>Полный анализ популярности 147 игр на основе комментариев</p>
         <a href="index.html" class="text-purple-400 hover:text-purple-300 mt-2 inline-block">← Вернуться к основному рейтингу</a>
     </footer>
 </body>
